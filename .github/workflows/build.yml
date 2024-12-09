@@ -1,0 +1,15 @@
+steps:
+  - name: Checkout code
+    uses: actions/checkout@v3
+
+  - name: Install dependencies
+    run: sudo apt-get install cmake
+
+  - name: Generate Makefile with CMake
+    run: cmake .
+
+  - name: Build project
+    run: make
+
+  - name: Run application
+    run: ./main
